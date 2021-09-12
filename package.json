@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/ronarceo/Model-View-Controller-MVC-Tech-Blog/issues"
   },
-  "homepage": "https://github.com/ronarceo/Model-View-Controller-MVC-Tech-Blog#readme"
+  "homepage": "https://github.com/ronarceo/Model-View-Controller-MVC-Tech-Blog#readme",
+  "dependencies": {
+    "mysql2": "^2.3.0"
+  }
 }
