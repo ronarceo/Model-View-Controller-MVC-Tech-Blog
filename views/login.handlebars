@@ -1,40 +1,38 @@
 <div class="row">
   <div class="col-md-6">
-
     <h2>Login</h2>
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="username-login">username:</label>
-        <input class="form-input" type="text" id="username-login" />
+    <form class="form login-form needs-validation">
+      <div class="form-group col-md-4 mb-3">
+        <label for="username-login">Username:</label>
+        <input type="text" class="form-control" id="username-login" placeholder="Enter username" required>
       </div>
-      <div class="form-group">
-        <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
+      <div class="form-group col-md-4 mb-3">
+        <label for="password-login">Password:</label>
+        <input type="password" class="form-control" id="password-login" placeholder="Password" required>
       </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
     </form>
   </div>
-  <div class="col-md-6">
 
+  <div class="col-md-6">
     <h2>Signup</h2>
-    <form class="form signup-form">
-      <div class="form-group">
-        <label for="username-signup">username:</label>
-        <input class="form-input" type="text" id="username-signup" />
+    <form class="form signup-form needs-validation">
+      <div class="form-group col-md-4 mb-3">
+        <label for="username-signup">Username:</label>
+        <input type="text" class="form-control" id="username-signup" placeholder="Create a username" required>
       </div>
-      <div class="form-group">
-        <label for="email-signup">email:</label>
-        <input class="form-input" type="text" id="email-signup" />
+      <div class="form-group col-md-4 mb-3">
+        <label for="email-signup">Email Address:</label>
+        <input type="email" class="form-control" id="email-signup" aria-describedby="emailHelp"
+          placeholder="Enter email" required>
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
       </div>
-      <div class="form-group">
-        <label for="password-signup">password:</label>
-        <input class="form-input" type="password" id="password-signup" />
+      <div class="form-group col-md-4 mb-3">
+        <label for="password-signup">Password:</label>
+        <input type="password" class="form-control" id="password-signup" placeholder="Password" required>
+        <small id="emailHelp" class="form-text text-muted">Minimum of 8 characters.</small>
       </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
-      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>
 </div>
