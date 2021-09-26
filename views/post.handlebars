@@ -1,5 +1,32 @@
-<div class="text-center">
+<div class="post">
   <h2>{{title}}</h2>
   <p>{{post_text}}</p>
   <p>Created by {{user.username}} on {{format_date createdAt}}</p>
 </div>
+
+<div class="comments">
+  {{#each comments as |comment|}}
+  <section class="comment">
+    <div class="meta">
+      {{user.username}} on {{format_date created_at}}
+    </div>
+    <div class="text">
+      {{comment_text}}
+    </div>
+  </section>
+  {{/each}}
+</div>
+
+{{#if logged_in}}
+<form class="comment-form">
+  <div>
+    <textarea name="comment-body" id="comment-text"></textarea>
+  </div>
+
+  <div>
+    <button type="submit" class="btn btn-primary">add comment</button>
+  </div>
+</form>
+
+<script src="/js/comment.js"></script>
+{{/if}}
