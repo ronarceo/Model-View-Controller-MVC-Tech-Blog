@@ -1,10 +1,10 @@
-const newFormHandler = async (event) => {
+const newPostHandler = async (event) => {
   event.preventDefault();
 
   const title = document.querySelector('#post-title').value.trim();
   const post_text = document.querySelector('#post-text').value.trim();
 
-  if (title && needed_funding && post_text) {
+  if (title && post_text) {
     const response = await fetch(`/api/posts`, {
       method: 'POST',
       body: JSON.stringify({ title, post_text }),
@@ -39,7 +39,7 @@ const delButtonHandler = async (event) => {
 
 document
   .querySelector('.new-post-form')
-  .addEventListener('submit', newFormHandler);
+  .addEventListener('submit', newPostHandler);
 
 document
   .querySelector('.post-list')

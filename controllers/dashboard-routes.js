@@ -35,7 +35,7 @@ router.get('/', withAuth, async (req, res) => {
 
         res.render('dashboard', {
             posts,
-            loggedIn: true
+            logged_in: true
         });
     } catch (err) {
         res.status(500).json(err);
