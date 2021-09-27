@@ -1,9 +1,9 @@
 nav {
-    background-color: #21295C;
+    background-color: #CDC392;
 }
 
 body {
-    background-color: #065A82;
+    background-color: #E8E5DA;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -15,8 +15,8 @@ body {
 
 form {
     padding: 10px;
-    border: 5px outset #9EB3C2;
-    background-color: #9EB3C2;
+    border: 5px solid #304C89;
+    background-color: #9EB7E5;
 }
 
 .form-group {
@@ -24,13 +24,15 @@ form {
 }
 
 .card {
-    border: 10px outset #9EB3C2;
+    border: 10px solid #304C89;
     margin: 20px;
+    background-color: #9EB7E5;
 }
 
 .card-title {
-    border: 5px outset #9EB3C2;
+    border: 5px solid #304C89;
     padding: 5px;
+    background-color: #648DE5;
 }
 
 textarea {
