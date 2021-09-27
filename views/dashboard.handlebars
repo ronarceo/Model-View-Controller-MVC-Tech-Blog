@@ -1,43 +1,51 @@
-<div class="col-md-6">
-  <h3>Create a New Post:</h3>
-  <form class="form new-post-form">
-    <div class="form-group">
-      <label for="post-title">Post Title:</label>
-      <input class="form-input" type="text" id="post-title" name="post-title" />
-    </div>
-    <div class="form-group">
-      <label for="post-text">description:</label>
-      <textarea class="form-input" id="post-text" name="post-text"></textarea>
-    </div>
-    <div class="form-group">
-      <button type="submit" class="btn btn-primary">Create</button>
-    </div>
-  </form>
-</div>
+<div class="container">
+  <div class="row">
 
-<div class="col-md-6">
-  {{#if posts.length}}
-  <div class="post-list">
-    <h3>Your Posts:</h3>
-
-    {{#each posts as |post|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/post/{{post.id}}">{{post.name}}</a></h4>
-      </div>
-      <div class="col-md-7">
-        <p>
-          {{post.post_text}}
-        </p>
-      </div>
-      <div class="col-md-4">
-        <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-        <button class="btn btn-sm btn-danger" data-id="{{post.id}}" id="deletePostButton">DELETE</button>
-      </div>
+    <div class="col-md-6">
+      <h3>Create a New Post:</h3>
+      <form class="form new-post-form">
+        <div class="form-group">
+          <label for="post-title">Post Title:</label>
+          <input class="form-input" type="text" id="post-title" name="post-title" />
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="post-text">Post Text:</label>
+          <textarea class="form-input" id="post-text" name="post-text"></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+      </form>
     </div>
-    {{/each}}
+
+    <div class="col-md-6">
+      <h3>Your Posts:</h3>
+      {{#if posts.length}}
+      <div class="post-list">
+
+        {{#each posts as |post|}}
+        <div class="row mb-2">
+          <div class="col-md-8">
+            <h4><a href="/post/{{post.id}}">{{post.name}}</a></h4>
+          </div>
+          <div class="col-md-7">
+            <p>
+              {{post.post_text}}
+            </p>
+          </div>
+          <div class="col-md-4">
+            <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+            <button class="btn btn-sm btn-danger" data-id="{{post.id}}" id="deletePostButton">DELETE</button>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+      {{else}}
+      <p>You have not posted anything.</p>
+      {{/if}}
+    </div>
   </div>
-  {{/if}}
 </div>
 
 <script src="/js/dashboard.js"></script>
