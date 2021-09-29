@@ -1,8 +1,11 @@
+// imports router from express
 const router = require('express').Router();
+// imports user, post, and comment models from models folder
 const { User, Post, Comment } = require('../../models');
-const sequelize = require('../../config/connection');
+// imports withAuth middleware from utils folder
 const withAuth = require('../../utils/auth');
 
+// route to retrieve all posts
 router.get('/', (req, res) => {
   Post.findAll({
     attributes: [
@@ -34,6 +37,7 @@ router.get('/', (req, res) => {
     });
 });
 
+// route to retrieve a specific post
 router.get('/:id', (req, res) => {
   Post.findOne({
     where: {
@@ -73,6 +77,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
+// route to create a new post
 router.post('/', withAuth, (req, res) => {
   Post.create({
     title: req.body.title,
@@ -86,6 +91,7 @@ router.post('/', withAuth, (req, res) => {
     });
 });
 
+// route to update an existing post
 router.put('/:id', withAuth, (req, res) => {
   Post.update(req.body,
     {
@@ -107,6 +113,7 @@ router.put('/:id', withAuth, (req, res) => {
     });
 });
 
+// route to delete an existing post
 router.delete('/:id', withAuth, (req, res) => {
   Post.destroy({
     where: {

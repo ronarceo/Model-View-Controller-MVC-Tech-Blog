@@ -1,8 +1,11 @@
+// imports router from express
 const router = require('express').Router();
-const sequelize = require('../config/connection');
+// imports user, post, and comment models from models folder
 const { Post, User, Comment } = require('../models');
+// imports withAuth middleware from utils folder
 const withAuth = require('../utils/auth');
 
+// route to render the dashboard page if user is logged in
 router.get('/', withAuth, async (req, res) => {
     try {
         const postData = await Post.findAll({
@@ -42,6 +45,7 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
+// route to render the edit post view where logged in user can edit or delete existing posts
 router.get('/edit/:id', withAuth, async (req, res) => {
     try {
         postData = await Post.findOne({

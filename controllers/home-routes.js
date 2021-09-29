@@ -1,7 +1,9 @@
+// imports router from express
 const router = require('express').Router();
-const sequelize = require('../config/connection');
+// imports user, post, and comment models from models folder
 const { Post, User, Comment } = require('../models');
 
+// route to render homepage
 router.get('/', async (req, res) => {
     try {
         const postData = await Post.findAll({
@@ -40,6 +42,7 @@ router.get('/', async (req, res) => {
     };
 });
 
+// route to render login view
 router.get('/login', (req, res) => {
     // If the user is already logged in, redirects the request to homepage
     if (req.session.logged_in) {
@@ -50,6 +53,7 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+// route to render signup view
 router.get('/signup', (req, res) => {
     // If the user is already logged in, redirects the request to homepage
     if (req.session.logged_in) {
@@ -60,6 +64,7 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
+// route to render post view of a specified post
 router.get('/post/:id', async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id, {
