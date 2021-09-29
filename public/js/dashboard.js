@@ -1,3 +1,8 @@
+function displayNewPostForm() {
+  document.querySelector('#new-post-form').style.display = 'block';
+  document.querySelector('#displayNewPostFormButton').style.display = 'none';
+}
+
 const newPostHandler = async (event) => {
   event.preventDefault();
 
