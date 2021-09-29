@@ -1,23 +1,28 @@
 <div class="card post">
   <div class="card-body">
-    <h2 class="card-title">{{title}}</h2>
-    <p class="card-subtitle">Posted by {{user.username}} on {{format_date createdAt}}</p>
-    <p class="card-text">{{post_text}}</p>
-
-    <div class="comments card">
-      {{#each comments as |comment|}}
-      <section class="comment card-body">
-        <div class="meta text-muted">
-          {{user.username}} commented on {{format_date created_at}}
-        </div>
-        <div class="text">
-          {{comment_text}}
-        </div>
-      </section>
-      {{/each}}
+    <div class="card-title d-flex justify-content-between flex-row">
+      <h2 class="column">{{title}}</h2>
+      <p class="card-subtitle text-muted column">Posted by {{user.username}} <br> on {{format_date createdAt}}</p>
     </div>
+    <p class="card-body">
+      {{post_text}}
+    </p>
   </div>
 </div>
+
+
+{{#each comments as |comment|}}
+<div class="card comment">
+  <section class="card-body">
+    <div class="meta text-muted">
+      {{user.username}} commented on {{format_date created_at}}
+    </div>
+    <div class="text">
+      {{comment_text}}
+    </div>
+  </section>
+</div>
+{{/each}}
 
 {{#if logged_in}}
 <div class="container">
