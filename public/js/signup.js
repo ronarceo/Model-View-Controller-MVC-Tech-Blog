@@ -1,3 +1,4 @@
+// creates a new user based on the information entered and automatically logs them in
 const signupFormHandler = async (event) => {
     event.preventDefault();
     console.log('signup fired');
