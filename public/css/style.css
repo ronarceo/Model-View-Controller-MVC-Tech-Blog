@@ -1,5 +1,7 @@
 nav {
     background-color: #CDC392;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: large;
 }
 
 body {
@@ -37,8 +39,12 @@ form {
 }
 
 a {
-    color: inherit;
+    color: #304C89;
     text-decoration: inherit;
+}
+
+button {
+    margin: 10px;
 }
 
 textarea {
