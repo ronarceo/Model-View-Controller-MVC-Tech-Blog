@@ -36,6 +36,11 @@ form {
     color: #304C89;
 }
 
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
 textarea {
     width: 100%;
     height: 100%;
